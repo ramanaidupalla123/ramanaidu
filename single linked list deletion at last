@@ -1,0 +1,71 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node*next;
+}*newnode,*head,*last,*temp;
+void created()
+{
+    int d;
+    do
+    {
+        printf("enter value");
+        scanf("%d",&d);
+        newnode=malloc(sizeof(struct node));
+        newnode->data=d;
+        newnode->next=NULL;
+        if(head==NULL)
+        {
+            head=newnode;
+            last=newnode;
+        }
+        else
+        {
+            last->next=newnode;
+            last=newnode;
+        }
+    }
+    while(d!=999);
+    
+}
+void print()
+{
+temp=head;
+while(temp!=NULL)
+{
+    printf("%d",temp->data);
+    temp=temp->next;
+}
+}
+void insert()
+{
+if(head==NULL){
+    printf("list is empty");
+}
+else
+{
+    int e;
+    printf("enter insert value");
+    scanf("%d",&e);
+    newnode=malloc(sizeof(struct node));
+    newnode->data=e;
+    last->next=newnode;
+    last=newnode;
+}
+}
+int main()
+    {
+        printf("last number is 999");
+        created();
+        insert();
+        print();
+        return 0;
+    }
+    
+    
+    
+    
+    
+    
+    
