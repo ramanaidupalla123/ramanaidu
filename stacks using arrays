@@ -1,0 +1,47 @@
+#include<stdlib.h>
+#define max 3
+int arr[max];
+int top=-1;
+void push(int d);
+void push(int d)
+{
+    if (top==max-1){
+    printf("stack is over flow");
+    exit(1);
+    }
+    else 
+    top++;
+    arr[top]=d;
+}
+int pop();
+int pop()
+{
+    if(max==-1){
+        printf("stack is under flow");
+        exit(1);
+    }
+    int temp;
+    temp=top;
+    top--;
+    return temp;
+}
+void display();
+void display()
+{
+   int i;
+   for(i=top;i>=0;i--){
+       printf("%d\n",arr[i]);
+   }
+}
+int main()
+{
+push(10);
+push(20);
+push(30);
+pop();
+display();    
+return 0;
+}
+ 
+     
+   
