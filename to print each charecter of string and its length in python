@@ -1,0 +1,6 @@
+str=input("enter string name : ")
+length=0
+for i in str :
+	print(i)
+	length+=1
+print("length of the string",length)
