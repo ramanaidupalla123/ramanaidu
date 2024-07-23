@@ -1,0 +1,15 @@
+# USING FOR LOOP
+n=int(input("enter table name"))
+print(n," table is given below")
+for i in range(1,11):
+		print(n,'X',i,'=',n*i)
+	
+# USING WHILE LOOP
+n=int(input("enter table name"))
+print("the table is given below")
+i=1
+while i<=10:
+	print(n,"X",i,"=",n*i)
+	i+=1
+	
+	
