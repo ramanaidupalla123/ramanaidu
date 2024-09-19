@@ -1,0 +1,35 @@
+class hello{
+ public int meth(int a,int b){
+ return a+b;
+ }
+ }
+ class nm extends hello {
+ int method(int a,int b){
+return a+b;
+}
+}
+public class mm extends nm{
+    int method1(int a,int b){
+        return a+b;
+    }
+public static void main(String args[]){
+mm obj=new mm();
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter a value in class hello");
+int c=sc.nextInt();    
+System.out.println("Enter b value in class hello");  
+int d=sc.nextInt();      
+System.out.println("Enter a value in class nm");
+int e=sc.nextInt();      
+System.out.println("Enter b value in class nm");
+int f=sc.nextInt();      
+System.out.println("Enter a value in class mm");
+int g=sc.nextInt();      
+System.out.println("Enter b value in class mm");
+int h=sc.nextInt(); 
+System.out.println("Sum of two numbers in parent class : "+obj.meth(c,d)); 
+System.out.println("Sum of two numbers in child class : "+obj.method(e,f)); 
+System.out.println("Sum of two numbers in child class : "+obj.method1(g,h)); 
+}
+}
+ 
