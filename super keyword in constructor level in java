@@ -1,0 +1,16 @@
+import java.util.*;
+class A{
+   A(int a,int b){
+       System.out.println("A-B :"+(a-b));
+   } 
+}
+public class B extends A{
+    
+   B(int a, int b){
+       super(a,b);
+       System.out.println("Sum of A+B : "+(a+b));
+   }
+    public static void main(String []args){
+        B obj=new B(2,3);
+    }
+}
