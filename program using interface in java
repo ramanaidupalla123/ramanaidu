@@ -1,0 +1,18 @@
+import java.util.*;
+interface  a{
+    public abstract void meth();
+    public abstract void mm();
+}
+public class b implements a{
+   public void meth(){
+        System.out.println("Class meth");
+    }
+   public void mm(){
+        System.out.println("Class mm");
+    }
+public static void main(String[] args){
+    b obj=new b();
+    obj.meth();
+    obj.mm();
+    }
+}
