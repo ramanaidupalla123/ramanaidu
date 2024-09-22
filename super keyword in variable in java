@@ -1,0 +1,14 @@
+import java.util.*;
+class A{
+    int a=10;
+}
+public class B extends A{
+    int a=20;
+    void dis(){
+        System.out.println("a vlaue : "+a);
+    }
+    public static void main(String []args){
+        B obj=new B();
+        obj.dis();
+    }
+}
