@@ -1,0 +1,20 @@
+import java.util.*;
+abstract class mm{
+   abstract void  meth();
+}
+abstract  class  nn extends mm{
+    void meth(){
+      System.out.println("mt class");
+    }
+    abstract void dis();
+}
+public class nm extends nn{
+     void dis(){
+        System.out.println("mt class");
+    }
+public static void main(String []args){
+    nm obj=new nm();
+    obj.meth();
+    obj.dis();
+}
+}
