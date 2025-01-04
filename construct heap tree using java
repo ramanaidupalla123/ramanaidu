@@ -1,0 +1,94 @@
+import java.util.*;
+class MaxHeap{
+    
+    int []arr;
+    int heapsize,maxsize;
+    MaxHeap(int val){
+        maxsize=val;
+        heapsize=0;
+        arr = new int[maxsize];
+    }
+    int parent(int i){
+        return (i-1)/2;
+    }
+    int lchild(int i){
+        return 2*i+1;
+    }
+    int rchild(int i){
+        return 2*i+2;
+    }
+    void insert(int val){
+        if(heapsize==maxsize){
+            System.out.println("Does not insert overflow");
+        }
+        int i=heapsize;
+        arr[i]=val;
+        heapsize++;
+        while(i!=0 && arr[i]>arr[parent(i)]){
+            int temp=arr[i];
+            arr[i]=arr[parent(i)];
+            arr[parent(i)]=temp;
+            i=parent(i);
+        }
+    }
+    void display(){
+        for(int i:arr){
+            System.out.print(i+" ");
+        }
+    }
+    int get(){
+        return heapsize;
+    }
+    void remove(int val){
+        if(heapsize<=0){
+            System.out.println("NO TREE ");
+        }
+       else  if(heapsize==1){
+            heapsize--;
+    }
+    else {
+        arr[0]=arr[heapsize-1];
+        heapsize--;
+        heapify(0);
+    }
+    }
+    void heapify(int i){
+        int l=lchild(i);
+        int r=rchild(i);
+        int big=i;
+        if(l<heapsize && arr[l]>arr[big]){
+            big=l;
+        }
+        if(r<heapsize && arr[r]>arr[big]){
+            big=r;
+        }
+        if(big!=i){
+            int temp=arr[big];
+            arr[big]=arr[i];
+            arr[i]=temp;
+            heapify(big);
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter number of elements in tree : ");
+        int a=sc.nextInt();
+        int []arr=new int[a];
+        MaxHeap h=new MaxHeap(a);
+        System.out.println("Enter elements to construct Heap tree ");
+        for(int i=0;i<a;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<a;i++){
+          h.insert(arr[i]); 
+        }
+        h.display(); 
+        System.out.println("Enter a number to remove : ");
+        int r=sc.nextInt();
+        h.remove(r);
+        System.out.println("present heap size is : "+h.get());
+        h.display();
+    }
+}
